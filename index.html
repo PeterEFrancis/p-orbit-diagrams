@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>p orbit diagrams</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Mathjax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    <style>
+
+      br {
+        user-select: none;
+      }
+
+      canvas {
+        border: 1px solid black;
+        width: 100%;
+      }
+
+      .cursorText {
+        position: absolute;
+        background-color: white;
+        padding: 2px;
+        pointer-events: none;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+
+
+    <div class="container">
+        <br>
+      <div class="jumbotron">
+        <h1 class="text-center">p orbit diagrams</h1>
+      </div>
+
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-4">
+          <div class="input-group"  style="margin-bottom: 20px">
+            <span class="input-group-addon">\(m = \)</span>
+            <input id="m-input" type="text" class="form-control" placeholder="10" value="10"/>
+          </div>
+          <div class="input-group" style="margin-bottom: 20px">
+            <span class="input-group-addon">\(p = \)</span>
+            <input id="p-input" type="text" class="form-control" placeholder="2" value="2"/>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <select id="color-style">
+            <option value="B&W">B&W</option>
+            <option value="LEN_CHORD">Length of Chord</option>
+            <!-- <option value="2">Length of Orbit</option> -->
+          </select>
+        </div>
+      </div>
+
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col-md-12">
+          <button class="btn btn-primary btn-lg center-block" onclick="get_settings(); plot();">Plot</button>
+        </div>
+      </div>
+
+      <!-- canvas -->
+      <div class="row">
+        <div class="col-md-12">
+          <canvas id="output" width="5000" height="5000"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="row" style="margin:100px 0px 100px 0px;">
+        <div class="col-md-12">
+          <p class="text-center" style="color: grey">Copyright &copy; 2022 <a style="color:grey; text-decoration: underline;" href="https://PeterEFrancis.com">Peter E. Francis</a></p>
+        </div>
+      </div>
+
+
+    <script src="engine.js"></script>
+
+    <script>
+      get_settings();
+    </script>
+
+  </body>
+</html>
