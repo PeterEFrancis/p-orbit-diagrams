@@ -47,9 +47,9 @@ function plot() {
     let curr = n;
     while (!visited.has(curr)) {
       last = curr;
-      curr = (last * p) % m;
-      chords.push([curr, last]);
-      visited.add(curr);
+      curr = (curr * p) % m;
+      chords.push([last, curr]);
+      visited.add(last);
     }
 
     // plot them
@@ -59,6 +59,8 @@ function plot() {
       } else if (color_style == 'LEN_CHORD') {
         let length = Math.sqrt((points[chords[i][0]].h - points[chords[i][1]].h) ** 2 + (points[chords[i][0]].k - points[chords[i][1]].k) ** 2);
         ctx.strokeStyle = 'hsl(' + (length * 360 / SIZE) + ', 100%, 50%)';
+      } else if (color_style == 'LEN_ORBIT') {
+        ctx.strokeStyle = 'hsl(' + (chords.length * 360 / m) + ', 100%, 50%)';
       }
 
       ctx.beginPath();
