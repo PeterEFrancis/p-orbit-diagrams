@@ -1,5 +1,5 @@
 
-const SIZE = 1000;
+const SIZE = 5000;
 
 var canvas = document.getElementById('output');
 var ctx = canvas.getContext('2d');

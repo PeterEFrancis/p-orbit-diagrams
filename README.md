@@ -1,1 +1,1 @@
-# custom-julia-sets
+# p orbit diagrams
