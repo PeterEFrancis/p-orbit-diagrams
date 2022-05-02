@@ -19,7 +19,7 @@
       }
 
       canvas {
-        border: 1px solid black;
+        /* border: 1px solid black; */
         width: 100%;
       }
 
@@ -44,17 +44,28 @@
       </div>
 
       <div class="row" style="margin-bottom: 20px;">
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="input-group"  style="margin-bottom: 20px">
             <span class="input-group-addon">\(m = \)</span>
-            <input id="m-input" type="text" class="form-control" placeholder="10" value="10"/>
+            <input id="m-input" type="number" class="form-control" placeholder="10" value="10" min="1" max="4480" oninput="get_settings(); plot()"/>
           </div>
           <div class="input-group" style="margin-bottom: 20px">
             <span class="input-group-addon">\(p = \)</span>
-            <input id="p-input" type="text" class="form-control" placeholder="2" value="2"/>
+            <input id="p-input" type="number" class="form-control" placeholder="2" value="2" min="1" oninput="get_settings(); plot()"/>
           </div>
+          <!-- <div class="row">
+            <div class="col-xs-3">
+              <input id="p-lower-bound" type="number" style="width: 100%" value="1"></input>
+            </div>
+            <div class="col-xs-6">
+              <input type="range" value="2" step="1" min="1" max="100" class="slider" id="p-range" oninput="oninput_range(this)">
+            </div>
+            <div class="col-xs-3">
+              <input id="p-upper-bound" type="number" style="width: 100%" = value="10"></input>
+            </div>
+          </div> -->
         </div>
-        <div class="col-md-4">
+        <div class="col-md-6">
           <div class="form-group">
             <label for="color-style">Color Style:</label>
               <select id="color-style" class="form-control">
@@ -64,12 +75,14 @@
               </select>
             </label>
           </div>
+          <!-- <br> -->
+          <button class="btn btn-primary btn-lg btn-block center-block" onclick="get_settings(); plot();">Plot</button>
+
         </div>
       </div>
 
       <div class="row" style="margin-bottom: 20px;">
         <div class="col-md-12">
-          <button class="btn btn-primary btn-lg center-block" onclick="get_settings(); plot();">Plot</button>
         </div>
       </div>
 

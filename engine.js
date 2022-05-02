@@ -13,10 +13,6 @@ function get_settings() {
   color_style = document.getElementById('color-style').value;
 }
 
-function get_point(m, n) {
-
-}
-
 
 function plot() {
   ctx.clearRect(0, 0, SIZE, SIZE);
@@ -131,3 +127,27 @@ function units(a) {
   }
   return ret;
 }
+
+
+
+
+// function oninput_range(range) {
+//   let variable = range.id.split('-')[0];
+//   document.getElementById(variable + '-input').value = range.value;
+//   get_settings();
+//   plot();
+// }
+//
+//
+// function oninput_upper_bound(upperbound) {
+//   let variable = upperbound.id.split('-')[0];
+//   document.getElementById(variable + '-upper-bound').value = range.value;
+//
+// }
+//
+//
+// function oninput_input(range) {
+//   // let variable = upperbound.id.split('-')[0];
+//   get_settings();
+//   plot();
+// }
